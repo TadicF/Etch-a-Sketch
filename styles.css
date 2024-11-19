@@ -1,19 +1,57 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 360px;
-  flex-wrap: wrap;
-  margin: auto;
+body {
+  font-family: Roboto;
 }
 
-.columns {
-  border: 1px solid black;
-  min-height: 20px;
-  min-width: 20px;
-  transition: all 0.15;
+.container {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+}
+
+.gridSquare {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
 }
 
 .hover {
   background-color: blue;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  gap: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+}
+
+.sizeButton, .resetButton {
+  background-color: rgb(200, 255, 243);
+  color: black;
+  padding: 10px 30px;
+  border: 0.5px solid rgba(0, 0, 0, 0.45);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.05s;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.sizeButton:hover, .resetButton:hover {
+  box-shadow: 0 0 3px;
+  scale: 1.2;
+  background-color: rgb(160, 252, 232);
+}
+
+.sizeButton:active, .resetButton:active {
+  background-color: rgb(117, 250, 221);
 }
