@@ -2,15 +2,22 @@ body {
   font-family: Roboto;
 }
 
+.mainContainer {
+
+}
+
+
 .container {
   display: flex;
   width: 500px;
   height: 500px;
   flex-wrap: wrap;
   border: 2px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5rem;
+  position: absolute;
+  top: 12.5%;
+  left: 50%;
+  margin-left: -250px;
+
 }
 
 .gridSquare {
@@ -33,7 +40,7 @@ body {
 }
 
 .sizeButton, .resetButton {
-  background-color: rgb(200, 255, 243);
+  background-color: rgba(153, 130, 255, 0.932);
   color: black;
   padding: 10px 30px;
   border: 0.5px solid rgba(0, 0, 0, 0.45);
@@ -49,9 +56,59 @@ body {
 .sizeButton:hover, .resetButton:hover {
   box-shadow: 0 0 3px;
   scale: 1.2;
-  background-color: rgb(160, 252, 232);
+  background-color: rgba(129, 100, 255, 0.932);
 }
 
 .sizeButton:active, .resetButton:active {
-  background-color: rgb(117, 250, 221);
+  background-color: rgba(105, 73, 248, 0.932);
+}
+
+.modes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 40rem;
+  margin-top: 2.5rem;
+}
+
+.modesList {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+
+}
+
+.rgbMode, .normalMode, .darkenMode {
+  background-color: rgba(153, 130, 255, 0.932);
+  color: black;
+  padding: 10px 20px;
+  border: 0.5px solid rgba(0, 0, 0, 0.45);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.05s;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.normalMode {
+  padding: 10px 8px;
+}
+
+.darkenMode {
+  padding: 10px 10px;
+}
+
+.rgbMode:hover, .normalMode:hover
+, .darkenMode:hover {
+  box-shadow: 0 0 3px;
+  scale: 1.2;
+  background-color: rgba(129, 100, 255, 0.932);
+}
+
+.rgbHover:active, .normalMode:active
+, .darkenMode:active {
+  background-color: rgba(105, 73, 248, 0.932);
 }
