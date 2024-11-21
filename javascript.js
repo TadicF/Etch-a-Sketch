@@ -6,7 +6,8 @@ const resetButton = document.querySelector(".resetButton");
 const normalMode = document.querySelector(".normalMode");
 const rgbMode = document.querySelector(".rgbMode");
 const darkenMode = document.querySelector(".darkenMode")
-let mode = 0;
+const colorOptions = document.querySelector(".colorOptions")
+let mode = 1;
 
 // Event listeners for modes, each has different value
 
@@ -34,7 +35,7 @@ function createGrid(size, defaultMode) {
   let squareSize = 100 / size; // Initialize a variable to calculate a size per square in % 
   let square;
 
-  if(gridMode === 0) { // This is for normal mode, so default red color
+  if(gridMode === 1) { // This is for normal mode, so default red color
     console.log("DEFAULT MODE");
     for(let i = 0; i < gridSize; i++) { 
       square = document.createElement("div");
@@ -47,10 +48,6 @@ function createGrid(size, defaultMode) {
       square.style.height = `${squareSize}%`; 
       square.addEventListener("mouseover", addHoverClass);
    }
-  }
-
-  else if(gridMode === 1) { // This is for normal mode, so user can pick their own colors
-    console.log("NORMAL MODE");
   }
 
   else if(gridMode === 2) { // This is for rgb mode, colors change after each square 
@@ -75,7 +72,7 @@ function createGrid(size, defaultMode) {
 // A function for adding class of name "hover" to square div
 
 function addHoverClass(e) {
-  e.target.style.backgroundColor = "red";
+  e.target.style.backgroundColor = "red"; // ${color}
 }
 
 // Function to reset grid style (colors, etc..)
@@ -118,8 +115,7 @@ createGrid(16, mode);
 //DONE - Add event listeners to Normal, RGB and Darken Mode
 //DONE - When BUTTON is clicked, change mode value based on button clicked
 //DONE - For Normal change to 1, for RGB change to 2 and for Darken change to 3
-// - Use Switch function to create Grid for Mode selected
-// - Randomize RGB Color values each time user hover over grid square
+//DONE - Randomize RGB Color values each time user hover over grid square
 
 
 

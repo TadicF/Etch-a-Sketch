@@ -1,11 +1,15 @@
 body {
   font-family: Roboto;
+  background-color: lavender;
 }
 
-.mainContainer {
-
+.title {
+  display: flex;
+  font-size: 50px;
+  font-weight: 900;
+  justify-content: center;
+  
 }
-
 
 .container {
   display: flex;
@@ -14,13 +18,13 @@ body {
   flex-wrap: wrap;
   border: 2px solid black;
   position: absolute;
-  top: 12.5%;
+  margin-top: -200px;
   left: 50%;
   margin-left: -250px;
-
 }
 
 .gridSquare {
+  
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
 }
@@ -70,6 +74,7 @@ body {
   gap: 1rem;
   margin-right: 40rem;
   margin-top: 2.5rem;
+  
 }
 
 .modesList {
@@ -111,4 +116,13 @@ body {
 .rgbHover:active, .normalMode:active
 , .darkenMode:active {
   background-color: rgba(105, 73, 248, 0.932);
+}
+
+.colorOptions {
+
+  width: 200px;
+
+  border: 1px solid black;
+  
+  
 }
