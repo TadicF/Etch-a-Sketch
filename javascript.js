@@ -5,24 +5,23 @@ const sizeButton = document.querySelector(".sizeButton");
 const resetButton = document.querySelector(".resetButton");
 const normalMode = document.querySelector(".normalMode");
 const rgbMode = document.querySelector(".rgbMode");
-const darkenMode = document.querySelector(".darkenMode")
 const colorOptions = document.querySelector(".colorOptions")
+const INITIAL_SIZE = 16;
 let mode = 1;
 
 // Event listeners for modes, each has different value
 
 normalMode.addEventListener("click", () => {
+  rgbMode.classList.remove("activeMode");
   mode = 1;
+  normalMode.classList.add("activeMode");
   document.querySelectorAll(".gridSquare").forEach(grid => grid.remove());
   createGrid(16, mode);
 });
 rgbMode.addEventListener("click", () => {
+  normalMode.classList.remove("activeMode");
   mode = 2;
-  document.querySelectorAll(".gridSquare").forEach(grid => grid.remove());
-  createGrid(16, mode);
-});
-darkenMode.addEventListener("click", () => {
-  mode = 3;
+  rgbMode.classList.add("activeMode");
   document.querySelectorAll(".gridSquare").forEach(grid => grid.remove());
   createGrid(16, mode);
 });
@@ -61,13 +60,8 @@ function createGrid(size, defaultMode) {
       square.style.height = `${squareSize}%`
       square.addEventListener("mouseover", rgbColors);
   }
+ }
 }
-
-  else if(gridMode === 3) { // Darken mode, basically just set opacity, till it reach full black
-    console.log("DARKEN MODE");
-  }
-     
-  }
 
 // A function for adding class of name "hover" to square div
 
@@ -79,7 +73,6 @@ function addHoverClass(e) {
 
 function resetGrid() {
   document.querySelectorAll(".gridSquare").forEach(element => element.style.backgroundColor = "white");
-
 }
 
 // Function that prompts the user for grid size
@@ -103,12 +96,13 @@ function rgbColors(e) {
   e.target.style.backgroundColor = `rgb(${firstColor}, ${secondColor}, ${thirdColor})`;
 }
 
+
 // event listeners for size & reset buttons
 
 sizeButton.addEventListener("click", setGridSize);
 resetButton.addEventListener("click", resetGrid);
 
-createGrid(16, mode);
+createGrid(INITIAL_SIZE, mode);
 
 // To do: 
 //DONE - Create Mode variable and don't initialize the value yet
@@ -116,7 +110,7 @@ createGrid(16, mode);
 //DONE - When BUTTON is clicked, change mode value based on button clicked
 //DONE - For Normal change to 1, for RGB change to 2 and for Darken change to 3
 //DONE - Randomize RGB Color values each time user hover over grid square
-
+// - 
 
 
 
